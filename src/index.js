@@ -1,6 +1,6 @@
 import React from 'react'
-import FormContainer from './components/container/FormContainer'
+import App from './components/App';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-ReactDOM.render(<FormContainer/>, document.getElementById("root"));
+ReactDOM.render(<App/>, document.getElementById("root"));
