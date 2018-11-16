@@ -12,7 +12,7 @@ module.exports = {
       filename: "./index.html",
       title: "使用Webpack搭建react环境"
     }),
-    new ExtractTextPlugin("css/style.css")
+    new ExtractTextPlugin("css/[name].[chunkhash].css")
   ],
   module: {
     rules: [
@@ -56,7 +56,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "js/bundle.js",
+    filename: "js/[name].[chunkhash].js",
     path: path.resolve(__dirname, 'dist')
   }
 }
