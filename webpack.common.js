@@ -29,12 +29,29 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: ["css-loader"]
         })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
+      },
+      {
+        test: /\.less$/,
+        include: path.join(__dirname, '/node_modules/antd'),
+        use: [{
+          loader: 'style-loader',
+        },{
+          loader: 'css-loader',
+        },{
+          loader: 'less-loader',
+          options: {
+            modifyVars: {
+              'primary-color': '#1da57a'
+            },
+            javascriptEnable: true,
+          }
+        }]
       }
     ]
   },
