@@ -5,6 +5,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
+  output: {
+    filename: "js/[name].[chunkhash].js",
+    path: path.resolve(__dirname, 'dist')
+  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
@@ -54,9 +58,5 @@ module.exports = {
         }]
       }
     ]
-  },
-  output: {
-    filename: "js/[name].[chunkhash].js",
-    path: path.resolve(__dirname, 'dist')
   }
 }
